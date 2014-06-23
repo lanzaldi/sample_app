@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
   
   def destroy
-	let(:doomed_user) User.find(params[:id])
+	doomed_user = User.find(params[:id])
 	if current_user?(doomed_user)
 		flash[:error] = "You cannot delete yourself!"
 		redirect_to users_url		
